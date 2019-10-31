@@ -5,9 +5,24 @@ defmodule Sof do
 
   @db "data.json"
 
+  def gen_html() do
+    name_list = read_name_list()
+
+    members =
+      read_or_create_db()
+      |> Enum.to_list()
+      |> Enum.filter(fn {name, _} -> MapSet.member?(name_list, name) end)
+      |> Enum.sort(fn {name1, _}, {name2, _} -> name1 <= name2 end)
+      |> Enum.with_index()
+
+    template = File.read!("../template/index.html.eex")
+    content = EEx.eval_string(template, members: members)
+    File.write!("../index.html", content)
+  end
+
   def update_db(filename) do
     db = read_or_create_db()
-    epgp_list = read_epgp(filename)
+    epgp_list = read_csv(filename)
     cat = String.trim_trailing(filename, ".csv")
 
     new_db =
@@ -38,7 +53,7 @@ defmodule Sof do
     end
   end
 
-  def read_epgp(filename) do
+  def read_csv(filename) do
     ["Name,EP,GP" | epgp_list] =
       "../data/"
       |> Path.join(filename)
