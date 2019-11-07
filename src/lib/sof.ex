@@ -20,10 +20,10 @@ defmodule Sof do
     File.write!("../index.html", content)
   end
 
-  def update_db(filename) do
+  def update_db(full_path) do
     db = read_or_create_db()
-    epgp_list = read_csv(filename)
-    cat = String.trim_trailing(filename, ".csv")
+    epgp_list = read_csv(full_path)
+    new_cat = Path.basename(full_path, ".csv")
 
     new_db =
       Enum.reduce(epgp_list, db, fn {name, ep, gp}, acc ->
@@ -33,11 +33,11 @@ defmodule Sof do
               "ep" => [ep],
               "gp" => [gp],
               "pr" => [Float.round(ep / gp, 3)],
-              "categories" => [cat]
+              "categories" => [new_cat]
             })
 
           history ->
-            new_history = update_history(history, ep, gp, cat)
+            new_history = update_history(history, ep, gp, new_cat)
             Map.put(acc, name, new_history)
         end
       end)
@@ -53,10 +53,9 @@ defmodule Sof do
     end
   end
 
-  def read_csv(filename) do
+  def read_csv(full_path) do
     ["Name,EP,GP" | epgp_list] =
-      "../data/"
-      |> Path.join(filename)
+      full_path
       |> File.read!()
       |> String.split("\n")
 
