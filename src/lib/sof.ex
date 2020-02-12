@@ -11,7 +11,8 @@ defmodule Sof do
     members =
       read_or_create_db()
       |> Enum.to_list()
-      |> Enum.filter(fn {name, _} -> MapSet.member?(name_list, name) end)
+      # |> IO.inspect()
+      |> Enum.filter(fn {_, %{"ep" => list}} -> Enum.max(list) > 0 end)
       |> Enum.sort(fn {name1, _}, {name2, _} -> name1 <= name2 end)
       |> Enum.with_index()
 
