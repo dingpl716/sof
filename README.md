@@ -1,4 +1,4 @@
-# Sof
+# Sky of Freedom
 
 **TODO: Add description**
 
