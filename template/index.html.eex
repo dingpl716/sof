@@ -175,9 +175,9 @@
           bindto: '#chart<%= index %>',
           data: {
               columns: [
-                  <%= inspect(['gp'] ++ data["gp"]) %>,
-                  <%= inspect(['ep'] ++ data["ep"]) %>,
-                  <%= inspect(['pr'] ++ data["pr"]) %>
+                  <%= inspect(['gp'] ++ data["gp"], limit: :infinity) %>,
+                  <%= inspect(['ep'] ++ data["ep"], limit: :infinity) %>,
+                  <%= inspect(['pr'] ++ data["pr"], limit: :infinity) %>
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -188,7 +188,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: <%= inspect(data["categories"]) %>
+                  categories: <%= inspect(data["categories"], limit: :infinity) %>
               }
           }
         });
