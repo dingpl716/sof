@@ -1,4 +1,8 @@
 defmodule Sof.Rp do
+  @moduledoc """
+  Mimic priority decay.
+  """
+
   @brackets %{
     14 => 12000,
     13 => 11000,

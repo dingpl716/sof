@@ -1,4 +1,8 @@
 defmodule Sof.Roll do
+  @moduledoc """
+  Mimic roll dice.
+  """
+
   def avg(m) do
     for i <- 1..1_000_000 do
       one_round(m)

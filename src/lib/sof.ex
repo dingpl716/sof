@@ -4,27 +4,29 @@ defmodule Sof do
   """
 
   @db "data.json"
+  @root ".."
+  @data_dir Path.join(@root, "data")
+  @web_dir Path.join(@root, "web")
 
-  def gen_html() do
-    name_list = read_name_list()
-
+  def refresh_html(dungeon) do
     members =
-      read_or_create_db()
+      read_or_create_db(dungeon)
       |> Enum.to_list()
       # |> IO.inspect()
       |> Enum.filter(fn {_, %{"ep" => list}} -> Enum.max(list) > 0 end)
       |> Enum.sort(fn {name1, _}, {name2, _} -> name1 <= name2 end)
       |> Enum.with_index()
 
-    template = File.read!("../template/index.html.eex")
+    template = @web_dir |> Path.join("template/index.html.eex") |> File.read!()
     content = EEx.eval_string(template, members: members)
-    File.write!("../index.html", content)
+
+    @web_dir |> Path.join("#{dungeon}.html") |> File.write!(content)
   end
 
-  def update_db(full_path) do
-    db = read_or_create_db()
-    epgp_list = read_csv(full_path)
-    new_cat = Path.basename(full_path, ".csv")
+  def update_db(dungeon, file) do
+    db = read_or_create_db(dungeon)
+    epgp_list = read_csv(dungeon, file)
+    new_cat = Path.basename(file, ".csv")
 
     new_db =
       Enum.reduce(epgp_list, db, fn {name, ep, gp}, acc ->
@@ -44,19 +46,21 @@ defmodule Sof do
       end)
       |> Jason.encode!()
 
-    File.write(Path.join("../data/", @db), new_db)
+    File.write(Path.join(@data_dir, @db), new_db)
   end
 
-  def read_or_create_db do
-    case File.read(Path.join("../data/", @db)) do
+  def read_or_create_db(dungeon) do
+    case File.read(@data_dir |> Path.join(dungeon) |> Path.join(@db)) do
       {:error, :enoent} -> %{}
       {:ok, content} -> Jason.decode!(content)
     end
   end
 
-  def read_csv(full_path) do
+  def read_csv(dungeon, file) do
     ["Name,EP,GP" | epgp_list] =
-      full_path
+      @data_dir
+      |> Path.join(dungeon)
+      |> Path.join(file)
       |> File.read!()
       |> String.split("\n")
 
@@ -68,13 +72,6 @@ defmodule Sof do
       end
     end)
     |> Enum.reject(&is_nil/1)
-  end
-
-  def read_name_list() do
-    "../resources/name_list"
-    |> File.read!()
-    |> String.split("\n")
-    |> MapSet.new()
   end
 
   defp update_history(

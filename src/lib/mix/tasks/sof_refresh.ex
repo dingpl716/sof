@@ -1,16 +1,16 @@
-defmodule Mix.Tasks.Sof.Gen do
+defmodule Mix.Tasks.Sof.Refresh do
   @moduledoc """
   Regenerates the index.html.
 
   ## Example:
 
-      mix sof.gen
+      mix sof.refresh mc
   """
   use Mix.Task
 
   @shortdoc "Regenerates the index.html."
 
-  def run([]) do
-    Sof.gen_html()
+  def run([dungeon]) do
+    Sof.refresh_html(dungeon)
   end
 end
