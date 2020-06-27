@@ -1,6 +1,6 @@
 defmodule Sof.Rp do
   @moduledoc """
-  Mimic priority decay.
+  Mimic rank points gain.
   """
 
   @brackets %{
