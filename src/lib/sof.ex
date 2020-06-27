@@ -12,7 +12,6 @@ defmodule Sof do
     members =
       read_or_create_db(dungeon)
       |> Enum.to_list()
-      # |> IO.inspect()
       |> Enum.filter(fn {_, %{"ep" => list}} -> Enum.max(list) > 0 end)
       |> Enum.sort(fn {name1, _}, {name2, _} -> name1 <= name2 end)
       |> Enum.with_index()
@@ -46,7 +45,7 @@ defmodule Sof do
       end)
       |> Jason.encode!()
 
-    File.write(Path.join(@data_dir, @db), new_db)
+    @data_dir |> Path.join(dungeon) |> Path.join(@db) |> File.write(new_db)
   end
 
   def read_or_create_db(dungeon) do

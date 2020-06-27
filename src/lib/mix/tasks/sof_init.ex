@@ -11,8 +11,7 @@ defmodule Mix.Tasks.Sof.Init do
   @shortdoc "Copy, update data and regenerate the index.html."
 
   def run([dungeon, file]) do
-    full_path = "../data" |> Path.join(dungeon) |> Path.join(file) |> Path.expand()
-    Sof.update_db(full_path, dungeon)
+    Sof.update_db(dungeon, file)
     Sof.refresh_html(dungeon)
   end
 end
