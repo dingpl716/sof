@@ -6,3 +6,6 @@ run:
 
 dep:
 	@cd src; mix deps.get
+
+build:
+	@cd src: mix compile

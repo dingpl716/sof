@@ -1,4 +1,8 @@
 defmodule Sof.Rp do
+  @moduledoc """
+  Mimic rank points gain.
+  """
+
   @brackets %{
     14 => 12000,
     13 => 11000,
