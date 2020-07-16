@@ -10,4 +10,12 @@ defmodule Sof.Ep do
 
     :ok
   end
+
+  def gp(base_gp, item_gp) do
+    Enum.reduce(1..15, base_gp + item_gp, fn x, acc ->
+      y = trunc(acc * 0.9)
+      IO.inspect({y, x})
+      y
+    end)
+  end
 end

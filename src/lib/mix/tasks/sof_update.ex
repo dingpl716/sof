@@ -24,6 +24,18 @@ defmodule Mix.Tasks.Sof.Update do
     Sof.refresh_html("bwl")
   end
 
+  def run(["--date", date, "--mc" mc_file]) do
+    File.cp!(mc_file, "../data/mc/#{date}.csv")
+    Sof.update_db("mc", "#{date}.csv")
+    Sof.refresh_html("mc")
+  end
+
+  def run(["--date", date, "--bwl" bwl_file]) do
+    File.cp!(bwl_file, "../data/bwl/#{date}.csv")
+    Sof.update_db("bwl", "#{date}.csv")
+    Sof.refresh_html("bwl")
+  end
+
   def get_tuesday() do
     today = System.system_time(:second) |> DateTime.from_unix!(:second) |> DateTime.to_date()
 
