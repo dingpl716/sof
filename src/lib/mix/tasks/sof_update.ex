@@ -15,24 +15,24 @@ defmodule Mix.Tasks.Sof.Update do
     run(["--date", date, mc_file, bwl_file])
   end
 
+  def run(["--date", date, "--mc", mc_file]) do
+    File.cp!(mc_file, "../data/mc/#{date}.csv")
+    Sof.update_db("mc", "#{date}.csv")
+    Sof.refresh_html("mc")
+  end
+
+  def run(["--date", date, "--bwl", bwl_file]) do
+    File.cp!(bwl_file, "../data/bwl/#{date}.csv")
+    Sof.update_db("bwl", "#{date}.csv")
+    Sof.refresh_html("bwl")
+  end
+
   def run(["--date", date, mc_file, bwl_file]) do
     File.cp!(mc_file, "../data/mc/#{date}.csv")
     File.cp!(bwl_file, "../data/bwl/#{date}.csv")
     Sof.update_db("mc", "#{date}.csv")
     Sof.update_db("bwl", "#{date}.csv")
     Sof.refresh_html("mc")
-    Sof.refresh_html("bwl")
-  end
-
-  def run(["--date", date, "--mc" mc_file]) do
-    File.cp!(mc_file, "../data/mc/#{date}.csv")
-    Sof.update_db("mc", "#{date}.csv")
-    Sof.refresh_html("mc")
-  end
-
-  def run(["--date", date, "--bwl" bwl_file]) do
-    File.cp!(bwl_file, "../data/bwl/#{date}.csv")
-    Sof.update_db("bwl", "#{date}.csv")
     Sof.refresh_html("bwl")
   end
 

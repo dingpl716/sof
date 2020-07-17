@@ -9,3 +9,6 @@ dep:
 
 build:
 	@cd src: mix compile
+
+update:
+	
