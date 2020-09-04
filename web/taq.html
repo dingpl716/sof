@@ -349,6 +349,12 @@
                               </li>
                             
                               <li>
+                                  <button type="button" class="mb-2 mr-2 btn btn-warning" onclick="doFunction('megicianred');">
+                                      megicianred
+                                  </button>
+                              </li>
+                            
+                              <li>
                                   <button type="button" class="mb-2 mr-2 btn btn-warning" onclick="doFunction('nigeniu萨满');">
                                       nigeniu萨满
                                   </button>
@@ -1768,13 +1774,13 @@
                           </div>
                       </div>
                     
-                      <div class="row" id="nigeniu萨满" name="epgp">
+                      <div class="row" id="megicianred" name="epgp">
                           <div class="col-md-12">
                               <div class="mb-3 card">
                                   <div class="card-header-tab card-header">
                                       <div class="card-header-title">
                                           <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
-                                          nigeniu萨满
+                                          megicianred
                                       </div>
                                   </div>
                                   <div class="tab-content">
@@ -1801,6 +1807,39 @@
                           </div>
                       </div>
                     
+                      <div class="row" id="nigeniu萨满" name="epgp">
+                          <div class="col-md-12">
+                              <div class="mb-3 card">
+                                  <div class="card-header-tab card-header">
+                                      <div class="card-header-title">
+                                          <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
+                                          nigeniu萨满
+                                      </div>
+                                  </div>
+                                  <div class="tab-content">
+                                      <div class="tab-pane fade active show" id="tab-eg-55">
+                                          <div class="widget-chart p-3">
+                                              <div style="height: 350px">
+                                                  <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                                      <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                                          <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                                                      </div>
+                                                      <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                                          <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                                      </div>
+                                                  </div>
+                                                  <!-- <canvas id="line-chart" width="1673" height="350" class="chartjs-render-monitor" style="display: block; width: 1673px; height: 350px;"></canvas> -->
+                                                  <div id="chart43"></div>
+                                              </div>
+                                              <div class="widget-chart-content text-center mt-5">
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    
                 </div>
             </div>
             <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
@@ -1813,9 +1852,9 @@
           bindto: '#chart0',
           data: {
               columns: [
-                  ['gp', 406, 365],
-                  ['ep', 1980, 2772],
-                  ['pr', 4.877, 7.595]
+                  ['gp', 406, 365, 490],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 4.877, 7.595, 7.11]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -1826,7 +1865,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -1835,9 +1874,9 @@
           bindto: '#chart1',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 261],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 13.349]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -1848,7 +1887,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -1857,9 +1896,9 @@
           bindto: '#chart2',
           data: {
               columns: [
-                  ['gp', 200, 366],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 7.574]
+                  ['gp', 200, 366, 329],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 7.574, 10.59]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -1870,7 +1909,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -1879,9 +1918,9 @@
           bindto: '#chart3',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 200],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 17.42]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -1892,7 +1931,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -1901,9 +1940,9 @@
           bindto: '#chart4',
           data: {
               columns: [
-                  ['gp', 306, 446],
-                  ['ep', 1980, 2772],
-                  ['pr', 6.471, 6.215]
+                  ['gp', 306, 446, 535],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 6.471, 6.215, 6.512]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -1914,7 +1953,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -1923,9 +1962,9 @@
           bindto: '#chart5',
           data: {
               columns: [
-                  ['gp', 342, 307],
-                  ['ep', 1980, 2772],
-                  ['pr', 5.789, 9.029]
+                  ['gp', 342, 307, 369],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 5.789, 9.029, 9.442]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -1936,7 +1975,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -1945,9 +1984,9 @@
           bindto: '#chart6',
           data: {
               columns: [
-                  ['gp', 448, 403],
-                  ['ep', 1980, 2772],
-                  ['pr', 4.42, 6.878]
+                  ['gp', 448, 403, 362],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 4.42, 6.878, 9.624]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -1958,7 +1997,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -1967,9 +2006,9 @@
           bindto: '#chart7',
           data: {
               columns: [
-                  ['gp', 272, 471],
-                  ['ep', 1620, 2448],
-                  ['pr', 5.956, 5.197]
+                  ['gp', 272, 471, 423],
+                  ['ep', 1620, 2448, 2203],
+                  ['pr', 5.956, 5.197, 5.208]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -1980,7 +2019,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -1989,9 +2028,9 @@
           bindto: '#chart8',
           data: {
               columns: [
-                  ['gp', 200, 342],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 8.105]
+                  ['gp', 200, 342, 429],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 8.105, 8.121]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2002,7 +2041,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2011,9 +2050,9 @@
           bindto: '#chart9',
           data: {
               columns: [
-                  ['gp', 247, 222],
-                  ['ep', 1980, 2772],
-                  ['pr', 8.016, 12.486]
+                  ['gp', 247, 222, 390],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 8.016, 12.486, 8.933]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2024,7 +2063,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2033,9 +2072,9 @@
           bindto: '#chart10',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 200],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 17.42]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2046,7 +2085,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2055,9 +2094,9 @@
           bindto: '#chart11',
           data: {
               columns: [
-                  ['gp', 261, 234],
-                  ['ep', 1980, 2772],
-                  ['pr', 7.586, 11.846]
+                  ['gp', 261, 234, 210],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 7.586, 11.846, 16.59]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2068,7 +2107,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2077,9 +2116,9 @@
           bindto: '#chart12',
           data: {
               columns: [
-                  ['gp', 261, 234],
-                  ['ep', 1980, 2772],
-                  ['pr', 7.586, 11.846]
+                  ['gp', 261, 234, 210],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 7.586, 11.846, 16.59]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2090,7 +2129,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2099,9 +2138,9 @@
           bindto: '#chart13',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 272],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 12.809]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2112,7 +2151,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2121,9 +2160,9 @@
           bindto: '#chart14',
           data: {
               columns: [
-                  ['gp', 200, 301],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 9.209]
+                  ['gp', 200, 301, 270],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 9.209, 12.904]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2134,7 +2173,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2143,9 +2182,9 @@
           bindto: '#chart15',
           data: {
               columns: [
-                  ['gp', 342, 473],
-                  ['ep', 1980, 2772],
-                  ['pr', 5.789, 5.86]
+                  ['gp', 342, 473, 425],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 5.789, 5.86, 8.198]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2156,7 +2195,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2165,9 +2204,9 @@
           bindto: '#chart16',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 200],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 17.42]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2178,7 +2217,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2187,9 +2226,9 @@
           bindto: '#chart17',
           data: {
               columns: [
-                  ['gp', 200, 261],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 10.621]
+                  ['gp', 200, 261, 461],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 10.621, 7.557]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2200,7 +2239,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2209,9 +2248,9 @@
           bindto: '#chart18',
           data: {
               columns: [
-                  ['gp', 200, 314],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 8.828]
+                  ['gp', 200, 314, 375],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 8.828, 9.291]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2222,7 +2261,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2231,9 +2270,9 @@
           bindto: '#chart19',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 200],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 17.42]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2244,7 +2283,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2253,9 +2292,9 @@
           bindto: '#chart20',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 200],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 17.42]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2266,7 +2305,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2275,9 +2314,9 @@
           bindto: '#chart21',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 200],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 17.42]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2288,7 +2327,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2297,9 +2336,9 @@
           bindto: '#chart22',
           data: {
               columns: [
-                  ['gp', 200, 394],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 7.036]
+                  ['gp', 200, 394, 354],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 7.036, 9.842]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2310,7 +2349,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2319,9 +2358,9 @@
           bindto: '#chart23',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 268],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 13.0]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2332,7 +2371,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2341,9 +2380,9 @@
           bindto: '#chart24',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 200],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 17.42]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2354,7 +2393,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2363,9 +2402,9 @@
           bindto: '#chart25',
           data: {
               columns: [
-                  ['gp', 200, 309],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 8.971]
+                  ['gp', 200, 309, 278],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 8.971, 12.532]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2376,7 +2415,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2385,9 +2424,9 @@
           bindto: '#chart26',
           data: {
               columns: [
-                  ['gp', 394, 354],
-                  ['ep', 1980, 2772],
-                  ['pr', 5.025, 7.831]
+                  ['gp', 394, 354, 620],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 5.025, 7.831, 5.619]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2398,7 +2437,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2407,9 +2446,9 @@
           bindto: '#chart27',
           data: {
               columns: [
-                  ['gp', 214, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.252, 13.86]
+                  ['gp', 214, 200, 200],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.252, 13.86, 17.42]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2420,7 +2459,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2429,9 +2468,9 @@
           bindto: '#chart28',
           data: {
               columns: [
-                  ['gp', 200, 336],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 8.25]
+                  ['gp', 200, 336, 302],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 8.25, 11.536]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2442,7 +2481,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2451,9 +2490,9 @@
           bindto: '#chart29',
           data: {
               columns: [
-                  ['gp', 280, 252],
-                  ['ep', 1980, 2772],
-                  ['pr', 7.071, 11.0]
+                  ['gp', 280, 252, 226],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 7.071, 11.0, 15.416]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2464,7 +2503,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2473,9 +2512,9 @@
           bindto: '#chart30',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 200],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 17.42]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2486,7 +2525,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2495,9 +2534,9 @@
           bindto: '#chart31',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 200],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 17.42]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2508,7 +2547,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2517,9 +2556,9 @@
           bindto: '#chart32',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 1782],
-                  ['pr', 9.9, 8.91]
+                  ['gp', 200, 200, 200],
+                  ['ep', 1980, 1782, 2593],
+                  ['pr', 9.9, 8.91, 12.965]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2530,7 +2569,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2539,9 +2578,9 @@
           bindto: '#chart33',
           data: {
               columns: [
-                  ['gp', 288, 289],
-                  ['ep', 1980, 2772],
-                  ['pr', 6.875, 9.592]
+                  ['gp', 288, 289, 260],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 6.875, 9.592, 13.4]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2552,7 +2591,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2561,9 +2600,9 @@
           bindto: '#chart34',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 200],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 17.42]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2574,7 +2613,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2583,9 +2622,9 @@
           bindto: '#chart35',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 200],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 17.42]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2596,7 +2635,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2605,9 +2644,9 @@
           bindto: '#chart36',
           data: {
               columns: [
-                  ['gp', 406, 527],
-                  ['ep', 1980, 2772],
-                  ['pr', 4.877, 5.26]
+                  ['gp', 406, 527, 474],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 4.877, 5.26, 7.35]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2618,7 +2657,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2627,9 +2666,9 @@
           bindto: '#chart37',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 200],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 17.42]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2640,7 +2679,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2649,9 +2688,9 @@
           bindto: '#chart38',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 261],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 13.349]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2662,7 +2701,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2671,9 +2710,9 @@
           bindto: '#chart39',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 200, 200],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 17.42]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2684,7 +2723,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2693,9 +2732,9 @@
           bindto: '#chart40',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 1782],
-                  ['pr', 9.9, 8.91]
+                  ['gp', 200, 200, 200],
+                  ['ep', 1980, 1782, 2593],
+                  ['pr', 9.9, 8.91, 12.965]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2706,7 +2745,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2715,9 +2754,9 @@
           bindto: '#chart41',
           data: {
               columns: [
-                  ['gp', 200, 288],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 9.625]
+                  ['gp', 200, 288, 259],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 9.625, 13.452]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2728,7 +2767,7 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
@@ -2737,9 +2776,9 @@
           bindto: '#chart42',
           data: {
               columns: [
-                  ['gp', 200, 200],
-                  ['ep', 1980, 2772],
-                  ['pr', 9.9, 13.86]
+                  ['gp', 200, 314],
+                  ['ep', 0, 990],
+                  ['pr', 0.0, 3.153]
               ],
               type: 'bar',
               types: { pr: 'spline' },
@@ -2750,7 +2789,29 @@
               y2: { show: true },
               x: {
                   type: 'category',
-                  categories: ["2020-08-18", "2020-08-25"]
+                  categories: ["2020-08-25", "2020-09-01"]
+              }
+          }
+        });
+      
+        var chart43 = c3.generate({
+          bindto: '#chart43',
+          data: {
+              columns: [
+                  ['gp', 200, 200, 200],
+                  ['ep', 1980, 2772, 3484],
+                  ['pr', 9.9, 13.86, 17.42]
+              ],
+              type: 'bar',
+              types: { pr: 'spline' },
+              axes: { gp: 'y', ep: 'y', pr: 'y2' },
+              groups: [['gp', 'ep']]
+          },
+          axis: {
+              y2: { show: true },
+              x: {
+                  type: 'category',
+                  categories: ["2020-08-18", "2020-08-25", "2020-09-01"]
               }
           }
         });
